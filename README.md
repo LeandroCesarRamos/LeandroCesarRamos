@@ -1,6 +1,6 @@
 ## Hello World, my name is Leandro Ramos 👋
 
-![Digitando](https://media4.giphy.com/media/citBl9yPwnUOs/200w.webp?cid=790b7611tdih2jv7lkf1klfuy44h7mukyomwgly9o4qsrqu1&ep=v1_gifs_search&rid=200w.webp&ct=g)
+![Digitando](https://user-images.githubusercontent.com/74038190/225813708-98b745f2-7d22-48cf-9150-083f1b00d6c9.gif)
 
 <!--
 **LeandroCesarRamos/LeandroCesarRamos** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
