@@ -1,16 +1,6 @@
-## Hi there 👋
+## Hello World, my name is Leandro Ramos 👋
 
-- *Leandro*
-- **Leandro**
-- ***Leandro***
-- Leandro
-  - Leandro
-1. Leandro
-
-[Por do sol](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Sunset_in_Manaus.jpg/1200px-Sunset_in_Manaus.jpg)
-
-![Por do Sol](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Sunset_in_Manaus.jpg/1200px-Sunset_in_Manaus.jpg)
-
+![Digitando](https://gifer.com/pt/1Xs)
 
 <!--
 **LeandroCesarRamos/LeandroCesarRamos** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
