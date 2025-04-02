@@ -7,6 +7,7 @@
 - 💻 Vou me tornar um profissional em TI.
 - 🔭 Penso que nunca é tarde para aprender algo novo e agora é a minha grande chance.
 - 🚀 Quero concluir esse meu sonho e conto com a colaboração de todos que estiverem dispostos à ajudar.
+- 🏁 Se acaso tiverem sugestões de melhorias, por favor, me avisem para conquistar essa vitória.
 
 <!--
 **LeandroCesarRamos/LeandroCesarRamos** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
