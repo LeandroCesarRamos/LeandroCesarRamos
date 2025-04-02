@@ -12,6 +12,13 @@
 
 [![Leandro GitHub stats](https://github-readme-stats.vercel.app/api?username=LeandrocesarRamos)](https://github.com/LeandroCesarRamos)
 
+<a href="https://github.com/LeandroCesarRamos/github-readme-stats">
+  <img height=200 align="center" src="https://github-readme-stats.vercel.app/api?username=LeandroCesarRamos" />
+</a>
+<a href="https://github.com/LeandroCesaRamos">
+  <img height=200 align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=LeandroCesarRamos&layout=compact&langs_count=8&card_width=320" />
+</a>
+
 <div>
   <a href="https://github.com/LeandroCesarRamos">
   <img height="180cm" src="https://github-readme-stats.vecel.app/api?username=LeandroCesarRamos&show_icons=true&theme=dracula&include_all_commits=true&count_private=true"/>
