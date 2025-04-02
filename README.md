@@ -12,6 +12,11 @@
 
 [![Leandro GitHub stats](https://github-readme-stats.vercel.app/api?username=LeandrocesarRamos)](https://github.com/LeandroCesarRamos)
 
+<div>
+  <a href-"https://github.com/LeandroCesarRamos">
+  <img height="180cm" src="https://github-readme-stats.vecel.app/api?username=LeandroCesarRamos&show_icons=true&theme=dracula&include_all_commits=true&count_private=true"/>
+  <img height="180cm" src="https://github-readme-stats.vecel.app/api/top-langs/?username=LeandroCesarRamos&layout=comact&langs_count=16&theme=dracula"/>
+</div>
 
 <!--
 **LeandroCesarRamos/LeandroCesarRamos** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
