@@ -10,6 +10,8 @@
 - 🚀 Quero concluir esse meu sonho e conto com a colaboração de todos que estiverem dispostos à ajudar.
 - 🏁 Se acaso tiverem sugestões de melhorias, por favor, me avisem para conquistar essa vitória.
 
+[![Leandro's GitHub stats](https://github-readme-stats.vercel.app/api?username=LeandrocesarRamos)](https://github.com/LeandroCesarRamos)
+
 <!--
 **LeandroCesarRamos/LeandroCesarRamos** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
