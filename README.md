@@ -10,13 +10,6 @@
 - 🚀 Quero concluir esse meu sonho e conto com a colaboração de todos que estiverem dispostos à ajudar.
 - 🏁 Se acaso tiverem sugestões de melhorias, por favor, me avisem para conquistar essa vitória.
 
-<a href="https://github.com/LeandroCesarRamos/github-readme-stats">
-  <img height=200 align="center" src="https://github-readme-stats.vercel.app/api?username=LeandroCesarRamos" />
-</a>
-<a href="https://github.com/LeandroCesaRamos">
-  <img height=200 align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=LeandroCesarRamos&layout=compact&langs_count=8&card_width=320" />
-</a>
-
 <div>
   <a href="https://github.com/LeandroCesarRamos/github-readme-stats">
   <img height="180cm" src="https://github-readme-stats.vercel.app/api?username=LeandroCesarRamos&show_icons=true&theme=dracula" />
