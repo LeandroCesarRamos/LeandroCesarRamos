@@ -30,6 +30,7 @@
 | Cursos | Certificados |
 |--------|--------------|
 |Instalação e Configuração do Visual Studio Code | [Certificado](https://hermes.dio.me/certificates/XQX2TGKG.pdf)
+|Autenticações do GitHub | [Certificado](https://hermes.dio.me/certificates/YSSWAKY2.pdf)
 ##
 <div> 
 <a href = "mailto:leandrocesarramos@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
