@@ -4,8 +4,6 @@
 
 <img src="./.github/assets/lineBar.png" width="100%" height="8px"/>
 
-<div><br />
-
 - 🐲 Me chamo Leandro.
 - 📖 Atualmente estou aprendendo uma nova profissão.
 - 💻 Vou me tornar um profissional em TI.
