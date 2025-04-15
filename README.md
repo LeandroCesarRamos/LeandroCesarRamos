@@ -10,18 +10,14 @@
 - 🚀 Quero concluir esse meu sonho e conto com a colaboração de todos que estiverem dispostos à ajudar.
 - 🏁 Se acaso tiverem sugestões de melhorias, por favor, me avisem para conquistar essa vitória.
 
-<div>
-
 <div align='center'>
 
-<div align="center">
-
-  <a href="https://github.com/LeandroCesarRamos/github-readme-stats">
-  </a>
+<div align="center">  
   
-  <img height="180cm" src="https://github-readme-stats.vercel.app/api?username=LeandroCesarRamos&show_icons=true&theme=dracula" />
-  <img height="180cm" src="https://github-readme-stats.vercel.app/api/top-langs?username=LeandroCesarRamos&layout=compact&langs_count=16&theme=dracula" />
-
+  <img width="49%" height="195px" src="https://github-readme-stats.vercel.app/api?username=LeandroCesarRamos&show_icons=true&count_private=true&title_color=80F7D4&icon_color=9d00ff&text_color=c9d1d9&bg_color=0d1117&border_color=fff0" /> 
+  
+  <img width="41%" height="195px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=LeandroCesaRamosCode&layout=compact&title_color=80F7D4&text_color=fff&bg_color=0d1117&border_color=fff0" />
+  
 </div>
 
 </div>
