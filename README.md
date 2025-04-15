@@ -16,7 +16,7 @@
   
   <img width="49%" height="195px" src="https://github-readme-stats.vercel.app/api?username=LeandroCesarRamos&theme=transparent&show_icons=true&border_color=fff0" /> 
   
-  <img width="41%" height="195px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=LeandroCesarRamos&theme=transparent&show_icons=true" />
+  <img width="41%" height="195px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=LeandroCesarRamos&theme=transparent&show_icons=true&border_color=fff0" />
   
 </div>
 
