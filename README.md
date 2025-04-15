@@ -2,7 +2,6 @@
 
 ![Digitando](https://user-images.githubusercontent.com/74038190/225813708-98b745f2-7d22-48cf-9150-083f1b00d6c9.gif)
 
-<img src="./.github/assets/lineBar.png" width="100%" height="8px"/>
 
 - 🐲 Me chamo Leandro.
 - 📖 Atualmente estou aprendendo uma nova profissão.
@@ -10,6 +9,8 @@
 - 🔭 Penso que nunca é tarde para aprender algo novo e agora é a minha grande chance.
 - 🚀 Quero concluir esse meu sonho e conto com a colaboração de todos que estiverem dispostos à ajudar.
 - 🏁 Se acaso tiverem sugestões de melhorias, por favor, me avisem para conquistar essa vitória.
+
+<img src="./.github/assets/lineBar.png" width="100%" height="8px"/>
 
 <div align='center'>
 
