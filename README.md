@@ -26,7 +26,6 @@
   <img align="center" alt="Leandro-Js" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
 </div>
 
-----------
 | Cursos | Certificados |
 |--------|--------------|
 |Instalação e Configuração do Visual Studio Code | [Certificado](https://hermes.dio.me/certificates/XQX2TGKG.pdf)
