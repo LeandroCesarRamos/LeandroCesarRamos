@@ -11,11 +11,19 @@
 - 🏁 Se acaso tiverem sugestões de melhorias, por favor, me avisem para conquistar essa vitória.
 
 <div>
+
+<div align='center'>
+
+<div align="center">
+
   <a href="https://github.com/LeandroCesarRamos/github-readme-stats">
-  
+
   <img height="180cm" src="https://github-readme-stats.vercel.app/api?username=LeandroCesarRamos&show_icons=true&theme=dracula" />
  
   <img height="180cm" src="https://github-readme-stats.vercel.app/api/top-langs?username=LeandroCesarRamos&layout=compact&langs_count=16&theme=dracula" />
+
+</div>
+
 </div>
 
 <div style="display: inline_block"><br>
