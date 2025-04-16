@@ -37,6 +37,7 @@
 |Príncipios do Git e Github | [Certificado](https://hermes.dio.me/certificates/ZTLBSDXJ.pdf)
 |Autenticações do GitHub | [Certificado](https://hermes.dio.me/certificates/YSSWAKY2.pdf)
 ##
+<p><strong>Entre em contato comigo</strong></p>
 <div> 
  <a href = "mailto:leandrocesarramos@gmail.com">
  <img src="https://img.shields.io/badge/-email-020114?style=for-the-badge&amp;logo=microsoft-outlook&amp;logoColor=6ED2B6&amp;color:FFF" alt="E-mail"></a>
