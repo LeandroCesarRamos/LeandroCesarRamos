@@ -22,6 +22,7 @@
 </div>
 
 ##
+<p><strong>O que estou aprendendo no momento</strong></p>
 <div align='center'>
 <img src="https://skillicons.dev/icons?i=java,js,vscode,git,github&theme=dark" />
 </div>
