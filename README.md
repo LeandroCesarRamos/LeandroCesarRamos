@@ -18,8 +18,8 @@
 
 ##
 <div align='center'>
-<p><strong>O que estou aprendendo no momento</strong></p>
-<img src="https://skillicons.dev/icons?i=java,js,vscode,git,github&theme=dark" />
+  <p><strong>O que estou aprendendo no momento</strong></p>
+  <img src="https://skillicons.dev/icons?i=java,js,vscode,git,github&theme=dark" />
 </div>
 
 ##
@@ -34,9 +34,9 @@
 ##
 <p><strong>Entre em contato comigo</strong></p>
 <div> 
- <a href = "mailto:leandrocesarramos@gmail.com">
- <img src="https://img.shields.io/badge/-email-020114?style=for-the-badge&amp;logo=microsoft-outlook&amp;logoColor=6ED2B6&amp;color:FFF" alt="E-mail"></a>
- <a href="https://www.linkedin.com/in/leandrocesarramos/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
+  <a href = "mailto:leandrocesarramos@gmail.com">
+  <img src="https://img.shields.io/badge/-email-020114?style=for-the-badge&amp;logo=microsoft-outlook&amp;logoColor=6ED2B6&amp;color:FFF" alt="E-mail"></a>
+  <a href="https://www.linkedin.com/in/leandrocesarramos/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
 </div>
 <!--
 **LeandroCesarRamos/LeandroCesarRamos** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
