@@ -22,7 +22,9 @@
 </div>
 
 ##
+<div align='center'>
 <img src="https://skillicons.dev/icons?i=vscode,js,git,github&theme=dark" />
+</div>
 
 ##
 | Cursos | Certificados |
