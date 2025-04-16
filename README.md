@@ -38,9 +38,9 @@
 |Autenticações do GitHub | [Certificado](https://hermes.dio.me/certificates/YSSWAKY2.pdf)
 ##
 <div> 
-<a href = "mailto:leandrocesarramos@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
-  <a href="https://www.linkedin.com/in/leandrocesarramos/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
-  
+ <a href = "mailto:leandrocesarramos@gmail.com">
+ <img src="https://img.shields.io/badge/-email-020114?style=for-the-badge&amp;logo=microsoft-outlook&amp;logoColor=6ED2B6&amp;color:FFF" alt="E-mail"></a>
+ <a href="https://www.linkedin.com/in/leandrocesarramos/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
 </div>
 <!--
 **LeandroCesarRamos/LeandroCesarRamos** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
