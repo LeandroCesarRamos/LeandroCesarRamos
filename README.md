@@ -27,7 +27,6 @@
 </div>
 
 ##
-<div align='center'>
 | Cursos | Certificados |
 |--------|--------------|
 |Apresentação da Formação JavaScript Developer | [Certificado](https://hermes.dio.me/certificates/56A3ED10.pdf)
@@ -35,7 +34,6 @@
 |Primeiros Passos com Git e GitHub | [Certificado](https://hermes.dio.me/certificates/ABC4FS3O.pdf)
 |Príncipios do Git e Github | [Certificado](https://hermes.dio.me/certificates/ZTLBSDXJ.pdf)
 |Autenticações do GitHub | [Certificado](https://hermes.dio.me/certificates/YSSWAKY2.pdf)
-</div>
 
 ##
 <p><strong>Entre em contato comigo</strong></p>
