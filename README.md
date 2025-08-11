@@ -29,7 +29,7 @@
 
 <div align="center">
   <p><strong>O que estou aprendendo no momento:</strong></p>
-  <img src="https://skillicons.dev/icons?i=pythom,java,js,vscode,git,github&theme=dark" alt="Skills" />
+  <img src="https://skillicons.dev/icons?i=python,java,js,vscode,git,github&theme=dark" alt="Skills" />
 </div>
 
 ##
