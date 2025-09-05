@@ -52,6 +52,7 @@
 ---
 
 <p><strong>📫 Entre em contato comigo:</strong></p>
+<p align="center">
 <div>
     <a href="mailto:leandrocesarramos@gmail.com">
     <img src="https://img.shields.io/badge/-Email-020114?style=for-the-badge&logo=microsoft-outlook&logoColor=6ED2B6" alt="E-mail">
@@ -66,4 +67,5 @@
     <img src="https://img.shields.io/badge/-Hashnode-white?style=for-the-badge&logo=hashnode&logoColor=blue" alt="Hashnode">
   </a>
 </div>
+</p>
 
