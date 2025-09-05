@@ -50,7 +50,7 @@
 ##
 
 ---
-
+<section class='contact'>
 <p align="center"><strong>📫 Entre em contato comigo:</strong></p>
 <div>
 <p align="center">
@@ -67,6 +67,7 @@
     <img src="https://img.shields.io/badge/-Hashnode-white?style=for-the-badge&logo=hashnode&logoColor=blue" alt="Hashnode">
   </a>
 </p>
+</section>
 </div>
 
 
