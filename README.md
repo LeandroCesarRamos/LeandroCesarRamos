@@ -51,7 +51,7 @@
 
 ---
 
-<p><strong>📫 Entre em contato comigo:</strong></p>
+<p align="center"><strong>📫 Entre em contato comigo:</strong></p>
 <div>
 <p align="center">
     <a href="mailto:leandrocesarramos@gmail.com">
