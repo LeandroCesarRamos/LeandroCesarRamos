@@ -62,6 +62,8 @@
     <img src="https://img.shields.io/badge/-stackoverflow-white?style=for-the-badge&logo=stackoverflow&logoColor=black" alt="stackoverflow"></a>
     <a href="https://hashnode.com/@leandrocesarramos" target="_blank">
     <img src="https://img.shields.io/badge/-Hashnode-white?style=for-the-badge&logo=hashnode&logoColor=blue" alt="Hashnode"></a>
+    <a href="https://www.instagram.com/leandrocesramos/" target="_blank">
+    <img src="https://img.shields.io/badge/-Instagram-white?style=for-the-badge&logo=instagram&logoColor=blue" alt="Instagram"></a>
     </p>
 </div>
 
