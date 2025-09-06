@@ -55,15 +55,15 @@
 <div>
     <p align="center">
     <a href="mailto:leandrocesarramos@gmail.com" target="_blank">
-    <img src="https://img.shields.io/badge/-Email-020114?style=for-the-badge&logo=microsoft-outlook&logoColor=6ED2B6" alt="E-mail"></a>
-    <a href="https://www.linkedin.com/in/leandrocesarramos/" target="_blank">
-    <img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+    <img src="https://img.shields.io/badge/-Email-white?style=for-the-badge&logo=microsoft-outlook&logoColor=020114" alt="E-mail"></a>
     <a href="https://stackoverflow.com/users/31364345/leandrocesarramos" target="_blank">
-    <img src="https://img.shields.io/badge/-stackoverflow-white?style=for-the-badge&logo=stackoverflow&logoColor=black" alt="stackoverflow"></a>
+    <img src="https://img.shields.io/badge/-stackoverflow-white?style=for-the-badge&logo=stackoverflow&logoColor=orange" alt="stackoverflow"></a>
+    <a href="https://www.linkedin.com/in/leandrocesarramos/" target="_blank">
+    <img src="https://img.shields.io/badge/-LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
     <a href="https://hashnode.com/@leandrocesarramos" target="_blank">
     <img src="https://img.shields.io/badge/-Hashnode-white?style=for-the-badge&logo=hashnode&logoColor=blue" alt="Hashnode"></a>
     <a href="https://www.instagram.com/leandrocesramos/" target="_blank">
-    <img src="https://img.shields.io/badge/-Instagram-white?style=for-the-badge&logo=instagram&logoColor=blue" alt="Instagram"></a>
+    <img src="https://img.shields.io/badge/-Instagram-white?style=for-the-badge&logo=instagram&logoColor=red" alt="Instagram"></a>
     </p>
 </div>
 
