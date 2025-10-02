@@ -1,6 +1,6 @@
 <div align="center">
   <h1>Olá, eu sou Leandro Ramos! 🤘</h1>
-  <img src="LR_Cartoon.jpg" alt="Digitando" width="300"/>
+  <img src="LR_Cartoon.jpg" alt="Digitando" width="500"/>
 </div>
 
 <p align="center">
