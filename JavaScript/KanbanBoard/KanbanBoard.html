@@ -185,7 +185,7 @@
 
     function clearCards(status) {
       const cardsArea = document.getElementById(status + '-cards');
-      // Remove apenas os cartões que estão atualmente na coluna
+      // Remove only the cards that are currently in the column
       Array.from(cardsArea.children).forEach(card => cardsArea.removeChild(card));
     }
 

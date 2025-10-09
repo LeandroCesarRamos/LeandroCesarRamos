@@ -2,7 +2,7 @@ import pygame
 import sys
 import random
 
-# Cores do portfólio
+# Portfolio Colors
 BG_COLOR = (24, 26, 32)     # #181a20
 CARD_COLOR = (35, 38, 58)     # #23263a
 LINE_COLOR = (207, 217, 223)  # #cfd9df
@@ -15,7 +15,7 @@ MARGIN = 30
 
 pygame.init()
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-screen.fill(BG_COLOR)  # Garante fundo do portfólio
+screen.fill(BG_COLOR)  # Guarantees portfolio fund
 pygame.display.set_caption('TicTacToe - Leandro Ramos')
 font = pygame.font.SysFont('Roboto', 64, bold=True)
 small_font = pygame.font.SysFont('Roboto', 32, bold=True)
@@ -26,13 +26,13 @@ current_player = 'X'
 game_over = False
 winner = None
 
-# Funções auxiliares
+# Auxiliary functions
 def draw_board():
     screen.fill(BG_COLOR)
-    # Título
+    # Title
     title = small_font.render('TicTacToe', True, X_COLOR)
     screen.blit(title, (WIDTH//2 - title.get_width()//2, 24))
-    # Centralização do tabuleiro
+    # Board centering
     board_width = 3 * CELL_SIZE + 2 * MARGIN
     start_x = (WIDTH - board_width) // 2
     start_y = 80
@@ -56,12 +56,12 @@ def draw_board():
     else:
         status = small_font.render(f'Player turn: {current_player}', True, X_COLOR if current_player == 'X' else O_COLOR)
     screen.blit(status, (WIDTH//2 - status.get_width()//2, status_y))
-    # Botão reiniciar
+    # Restart button
     btn_rect = pygame.Rect(WIDTH//2-180, HEIGHT-50, 160, 36)
     pygame.draw.rect(screen, X_COLOR, btn_rect, border_radius=8)
     btn_text = pygame.font.SysFont('Roboto', 24, bold=True).render('Restart', True, CARD_COLOR)
     screen.blit(btn_text, (btn_rect.x + btn_rect.width//2 - btn_text.get_width()//2, btn_rect.y + 6))
-    # Botão Close Game
+    # Close Game Button
     close_rect = pygame.Rect(WIDTH//2+30, HEIGHT-50, 160, 36)
     pygame.draw.rect(screen, O_COLOR, close_rect, border_radius=8)
     close_text = pygame.font.SysFont('Roboto', 24, bold=True).render('Close Game', True, CARD_COLOR)
@@ -136,7 +136,7 @@ def check_winner_minimax(board):
         return 'Draw'
     return None
 
-# Loop principal
+# Main loop
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -159,7 +159,7 @@ while True:
                             game_over = True
                         else:
                             current_player = 'O'
-            # Botões
+            # Buttons
             btn_rect, close_rect = draw_board()
             if btn_rect.collidepoint(event.pos):
                 reset_board()
@@ -170,7 +170,7 @@ while True:
                 except:
                     pygame.quit()
                     sys.exit()
-    # Bot joga como 'O' usando minimax
+    # Bot plays as 'O' using minimax
     if not game_over and current_player == 'O':
         pygame.time.wait(400)
         move = best_move(board)
