@@ -1,22 +1,23 @@
 <div align="center">
-  <h1>Olá, eu sou Leandro Ramos! 🤘</h1>
+  <h1>Hello, I'm Leandro Ramos! 🤘</h1>
   <img src="LR_Cartoon.jpg" alt="Digitando" width="500"/>
 </div>
 
 <p align="center">
-  <b>Bem-vindo ao meu perfil do GitHub!</b><br>
-  Sou apaixonado por tecnologia e estou em transição de carreira para a área de TI.<br>
-  Aqui você vai encontrar meus projetos, estudos e conquistas nessa nova jornada.
+  <b>Welcome to my GitHub profile!</b><br>
+  Always seeking innovations. Here you'll find my projects, my learning journey, and my achievements as I grow in this incredible field.
 </p>
 
 ---
 
-- 🐲 Me chamo Leandro.
-- 📖 Atualmente estou aprendendo uma nova profissão.
-- 💻 Quero me tornar um profissional em TI.
-- 🔭 Acredito que nunca é tarde para aprender algo novo e agora é a minha grande chance.
-- 🚀 Quero realizar esse sonho e conto com a colaboração de todos que estiverem dispostos a ajudar.
-- 🏁 Se tiver sugestões de melhorias, por favor, me avise para que eu possa evoluir ainda mais.
+
+
+My name is Leandro.
+Lifelong learner, always seeking new knowledge and skills.
+Focused on becoming an IT professional and building innovative solutions.
+I believe it is never too late to start something new—this is my moment to grow and transform.
+Driven by curiosity and the desire to make a positive impact through technology.
+If you have suggestions or feedback, feel free to reach out so I can keep improving!
 
 ---
 
@@ -28,22 +29,32 @@
 ##
 
 <div align="center">
-  <p><strong>O que estou aprendendo no momento:</strong></p>
-  <img src="https://skillicons.dev/icons?i=python,java,js,vscode,git,github&theme=dark" alt="Skills" />
+  <p><strong>What I'm learning right now:</strong></p>
+  <img src="https://skillicons.dev/icons?i=python,java,js,vscode,html,css,react,nodejs,git,github&theme=dark" alt="Skills" />
 </div>
 
 ##
 
 <details>
-  <summary><strong>📚 Cursos e Certificados</strong></summary>
+  <summary><strong>📚 Courses and Certificates</strong></summary>
 
-| Curso | Certificado |
-|-------|-------------|
-| Apresentação da Formação JavaScript Developer | [Ver certificado](https://hermes.dio.me/certificates/56A3ED10.pdf) |
-| Instalação e Configuração do Visual Studio Code | [Ver certificado](https://hermes.dio.me/certificates/XQX2TGKG.pdf) |
-| Primeiros Passos com Git e GitHub | [Ver certificado](https://hermes.dio.me/certificates/ABC4FS3O.pdf) |
-| Princípios do Git e GitHub | [Ver certificado](https://hermes.dio.me/certificates/ZTLBSDXJ.pdf) |
-| Autenticações do GitHub | [Ver certificado](https://hermes.dio.me/certificates/YSSWAKY2.pdf) |
+| Courses | Edtech | Certificates |
+|---------|--------|--------------|
+| Criando Objetos e Classes em JavaScript | Digital Innovation One | [View certificate](https://hermes.dio.me/certificates/34UQG0KL.pdf) |
+| Conhecendo Funções JavaScript | Digital Innovation One | [View certificate](https://hermes.dio.me/certificates/HWP0JL12.pdf) |
+| Advertising in the Age of Generative AI | Coursera | [View certificate](https://coursera.org/verify/3SFFW1UENJC2) |
+| Formação Github Certification | Digital Innovation One | [View certificate](https://hermes.dio.me/certificates/3RK1TMO0.pdf) |
+| Utilizando Recursos do Github em um Projeto Open Source | Digital Innovation One | [View certificate](https://hermes.dio.me/certificates/DZ3SYLHZ.pdf) |
+| Utilizando as Ferramentas do GitHub para Solucionar Algoritmos em Python | Digital Innovation One | [View certificate](https://hermes.dio.me/certificates/QG1L0MUZ.pdf) |
+| Github Codespace | Digital Innovation One | [View certificate](https://hermes.dio.me/certificates/03AOVH6Z.pdf) |
+| Github Copilot | Digital Innovation One | [View certificate](https://hermes.dio.me/certificates/XDXZ3CLZ.pdf) |
+| Gerenciando Seu Trabalho Com Github Projects | Digital Innovation One | [View certificate](https://hermes.dio.me/certificates/KCW8UVWB.pdf) |
+| Princípios do Git e GitHub | Digital Innovation One | [View certificate](https://hermes.dio.me/certificates/ZTLBSDXJ.pdf) |
+| Autenticações do GitHub | Digital Innovation One | [View certificate](https://hermes.dio.me/certificates/YSSWAKY2.pdf) |
+| Primeiros Passos com Git e GitHub | Digital Innovation One | [View certificate](https://hermes.dio.me/certificates/ABC4FS3O.pdf) |
+| Formatação com Markdown | Digital Innovation One | [View certificate](https://hermes.dio.me/certificates/ZDAAPPM3.pdf) |
+| Instalação e Configuração do Visual Studio Code | Digital Innovation One | [View certificate](https://hermes.dio.me/certificates/XQX2TGKG.pdf) |
+
 
 </details>
 
@@ -51,7 +62,7 @@
 
 ---
 
-<p align="center"><strong>📫 Entre em contato comigo:</strong></p>
+<p align="center"><strong>📫 Contact me:</strong></p>
 <div>
     <p align="center">
     <a href="mailto:leandrocesarramos@gmail.com" target="_blank">

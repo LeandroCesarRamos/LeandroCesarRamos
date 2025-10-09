@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Price List</title>
+  <style>
+    body {
+      background: #181a20;
+      color: #fff;
+      font-family: 'Montserrat', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .price-table-container {
+      background: #23263a;
+      border-radius: 18px;
+      box-shadow: 0 8px 32px rgba(102, 82, 53, 0.45), 0 2px 8px rgba(0,0,0,0.18);
+      padding: 40px 32px;
+      max-width: 700px;
+      width: 100%;
+    }
+    h2 {
+      color: #ffb347;
+      text-align: center;
+      margin-bottom: 32px;
+      font-size: 2rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 24px;
+    }
+    th, td {
+      padding: 16px 12px;
+      text-align: left;
+      border-bottom: 1px solid #353866;
+    }
+    th {
+      background: #353866;
+      color: #fff;
+      font-size: 1.1rem;
+    }
+    tr:hover td {
+      background: #282930;
+      transition: background 0.2s;
+    }
+    .highlight {
+      background: #ffb347;
+      color: #23263a;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .filter-bar {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 24px;
+      justify-content: center;
+    }
+    .filter-bar input, .filter-bar select {
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+      background: #181a20;
+      color: #fff;
+    }
+    .filter-bar input:focus, .filter-bar select:focus {
+      outline: 2px solid #ffb347;
+    }
+    @media (max-width: 600px) {
+      .price-table-container {
+        padding: 16px 4px;
+      }
+      th, td {
+        padding: 8px 4px;
+      }
+    }
+    #btn-Return {
+    background-color: #23263a;
+    color: #ffb347;
+    font-size: 1.5rem;
+    padding: 12px 32px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(53,56,102,0.45), 0 2px 8px rgba(0,0,0,0.18);
+    border: 10px solid #1f212b;
+    cursor: pointer;
+    margin-top: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    }
+    #btn-Return:hover {
+    color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="price-table-container">
+    <h2>Interactive Price List</h2>
+    <div class="filter-bar">
+      <input type="text" id="search" placeholder="Search product..." oninput="filterTable()">
+      <select id="category" onchange="filterTable()">
+        <option value="">All categories</option>
+        <option value="Electronics">Electronics</option>
+        <option value="Home">Home</option>
+        <option value="Desk">Desk</option>
+      </select>
+    </div>
+    <table id="priceTable">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Category</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Notebook</td>
+          <td>Electronics</td>
+          <td>R$ 4.200,00</td>
+        </tr>
+        <tr>
+          <td>Smartphone</td>
+          <td>Electronics</td>
+          <td>R$ 2.500,00</td>
+        </tr>
+        <tr>
+          <td>Gamer Chair</td>
+          <td>Desk</td>
+          <td>R$ 1.100,00</td>
+        </tr>
+        <tr>
+          <td>Blender</td>
+          <td>Home</td>
+          <td>R$ 220,00</td>
+        </tr>
+        <tr>
+          <td>UltraWide Monitor</td>
+          <td>Electronics</td>
+          <td>R$ 1.800,00</td>
+        </tr>
+        <tr>
+          <td>Table Lamp LED</td>
+          <td>Desk</td>
+          <td>R$ 150,00</td>
+        </tr>
+        <tr>
+          <td>Electric Cooker</td>
+          <td>Home</td>
+          <td>R$ 320,00</td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="width:100%; display:flex; justify-content:center; margin-top:32px;">
+  <button id="btn-Return" onclick="window.history.back()"><strong>Return</strong></button>
+</div>
+  </div>
+  <script>
+    function filterTable() {
+      var search = document.getElementById('search').value.toLowerCase();
+      var category = document.getElementById('category').value;
+      var table = document.getElementById('priceTable');
+      var trs = table.getElementsByTagName('tr');
+      for (var i = 1; i < trs.length; i++) {
+        var tds = trs[i].getElementsByTagName('td');
+        if (tds.length === 0) continue;
+        var product = tds[0].textContent.toLowerCase();
+        var cat = tds[1].textContent;
+        var show = true;
+        if (search && !product.includes(search)) show = false;
+        if (category && cat !== category) show = false;
+        trs[i].style.display = show ? '' : 'none';
+      }
+    }
+  </script>
+</body>
+</html>

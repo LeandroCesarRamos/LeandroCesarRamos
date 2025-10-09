@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2D Platform Game - Leandro Ramos</title>
+  <link rel="stylesheet" href="../../assets/LeandroRamos-Personal-Portifolio.css">
+  <style>
+    body {
+      background: #181a20;
+      font-family: 'Montserrat', Arial, sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1 {
+      color: #ffb347;
+      margin-top: 32px;
+      font-size: 2.2em;
+      letter-spacing: 2px;
+      text-align: center;
+    }
+    #gameCanvas {
+      background: #181a20;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(102, 82, 53, 0.45), 0 2px 8px rgba(0,0,0,0.18);
+      display: block;
+      margin: 32px auto;
+      border: 8px solid #353866;
+    }
+    .controls {
+      margin-top: 12px;
+      color: #fff;
+      font-size: 1.1em;
+      text-align: center;
+    }
+    #btn-Return {
+    background-color: #23263a;
+    color: #ffb347;
+    font-size: 1.5rem;
+    padding: 12px 32px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(102, 82, 53, 0.45), 0 2px 8px rgba(0,0,0,0.18);
+    cursor: pointer;
+    margin-top: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    }
+    #btn-Return:hover {
+    color: #fff;
+    }
+    #restartBtn {
+      background: #ffb347;
+      color: #23263a;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 18px;
+      font-size: 1em;
+      cursor: pointer;
+      box-shadow: 0 8px 32px rgba(102, 82, 53, 0.45), 0 2px 8px rgba(0,0,0,0.18);
+      transition: background 0.2s;
+    }
+    #restartBtn:hover {
+      background: #fff;
+      color: #23263a;
+    }
+  </style>
+</head>
+<body>
+  <h1>2D Platform Game</h1>
+  <canvas id="gameCanvas" width="640" height="360"></canvas>
+  <div class="controls">
+    Use the keys <strong>←</strong>, <strong>→</strong> to move and <strong>Space</strong> to jump.<br>
+    <button id="restartBtn" style="margin-top:10px;">Restart</button>
+  </div>
+  <div style="width:100%; display:flex; justify-content:center; margin-top:32px;">
+  <button id="btn-Return" onclick="window.history.back()"><strong>Return</strong></button>
+  </div>
+  <script>
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // Player
+    const player = {
+      x: 50,
+      y: 260,
+      w: 32,
+      h: 32,
+      color: '#ffb347',
+      dx: 0,
+      dy: 0,
+      speed: 3,
+      jumpPower: 8,
+      onGround: false
+    };
+
+    // Platforms
+    const platforms = [
+      { x: 0, y: 320, w: 640, h: 40 },
+      { x: 120, y: 260, w: 120, h: 16 },
+      { x: 320, y: 200, w: 100, h: 16 },
+      { x: 500, y: 140, w: 80, h: 16 },
+      { x: 220, y: 100, w: 80, h: 16 }
+    ];
+
+    // Collectible
+    let coin = { x: 540, y: 110, r: 12, collected: false };
+
+    // Controls
+    const keys = {};
+    document.addEventListener('keydown', e => keys[e.code] = true);
+    document.addEventListener('keyup', e => keys[e.code] = false);
+
+    document.getElementById('restartBtn').onclick = function() {
+      player.x = 50;
+      player.y = 260;
+      player.dx = 0;
+      player.dy = 0;
+      coin.collected = false;
+      this.blur(); // Remove o foco do botão após clicar
+    };
+
+    function update() {
+      // Horizontal movement
+      if (keys['ArrowLeft']) player.dx = -player.speed;
+      else if (keys['ArrowRight']) player.dx = player.speed;
+      else player.dx = 0;
+
+      // Jump
+      if (keys['Space'] && player.onGround) {
+        player.dy = -player.jumpPower;
+        player.onGround = false;
+      }
+
+      // Gravity
+      player.dy += 0.5;
+      player.x += player.dx;
+      player.y += player.dy;
+
+      // Collision with platforms
+      player.onGround = false;
+      for (let plat of platforms) {
+        if (
+          player.x < plat.x + plat.w &&
+          player.x + player.w > plat.x &&
+          player.y < plat.y + plat.h &&
+          player.y + player.h > plat.y
+        ) {
+          // From above
+          if (player.dy > 0 && player.y + player.h - player.dy <= plat.y) {
+            player.y = plat.y - player.h;
+            player.dy = 0;
+            player.onGround = true;
+          }
+        }
+      }
+
+      // Prevent falling off canvas
+      if (player.y > canvas.height) {
+        player.x = 50;
+        player.y = 260;
+        player.dy = 0;
+      }
+
+      // Collect coin
+      if (!coin.collected &&
+        player.x < coin.x + coin.r &&
+        player.x + player.w > coin.x - coin.r &&
+        player.y < coin.y + coin.r &&
+        player.y + player.h > coin.y - coin.r
+      ) {
+        coin.collected = true;
+      }
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      // Draw platforms
+      ctx.fillStyle = '#353866';
+      for (let plat of platforms) {
+        ctx.fillRect(plat.x, plat.y, plat.w, plat.h);
+      }
+      // Draw player
+      ctx.fillStyle = player.color;
+      ctx.fillRect(player.x, player.y, player.w, player.h);
+      // Draw coin
+      if (!coin.collected) {
+        ctx.beginPath();
+        ctx.arc(coin.x, coin.y, coin.r, 0, 2 * Math.PI);
+        ctx.fillStyle = '#ffb347';
+        ctx.fill();
+        ctx.strokeStyle = '#ffb347';
+        ctx.lineWidth = 2;
+        ctx.stroke();
+      } else {
+        ctx.font = 'bold 32px Montserrat, Arial';
+        ctx.fillStyle = '#ffb347';
+        ctx.fillText('Congratulations!', 180, 80);
+      }
+    }
+
+    function loop() {
+      update();
+      draw();
+      requestAnimationFrame(loop);
+    }
+    loop();
+  </script>
+</body>
+</html>

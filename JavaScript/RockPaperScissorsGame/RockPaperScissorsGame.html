@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rock, Paper, Scissors Game - Leandro Ramos</title>
+  <link rel="stylesheet" href="../../assets/LeandroRamos-Personal-Portifolio.css">
+  <style>
+    body {
+      background: #181a20;
+      font-family: 'Montserrat', Arial, sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1 {
+      color: #ffb347;
+      margin-top: 32px;
+      font-size: 2.2em;
+      letter-spacing: 2px;
+      text-align: center;
+    }
+    .game-container {
+      background: #23263a;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(102, 82, 53, 0.45), 0 2px 8px rgba(0,0,0,0.18);
+      padding: 32px 24px;
+      margin-top: 48px;
+      width: 350px;
+      color: #fff;
+      text-align: center;
+    }
+    .choices {
+      display: flex;
+      justify-content: space-around;
+      margin: 24px 0;
+    }
+    .choice-btn {
+      background: #353866;
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      padding: 18px 24px;
+      font-size: 1.3em;
+      cursor: pointer;
+      box-shadow: 0 2px 8px #0077ff33;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .choice-btn:hover {
+      background: #0077ff;
+      transform: scale(1.08);
+    }
+    .result {
+      font-size: 1.3em;
+      margin: 18px 0 8px 0;
+      font-weight: bold;
+      color: #ffb347;
+      min-height: 32px;
+    }
+    .score {
+      font-size: 1.1em;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+    .restart-btn {
+      background: #ffb347;
+      color: #23263a;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 18px;
+      font-size: 1em;
+      cursor: pointer;
+      box-shadow: 0 2px 8px #ffd90033;
+      transition: background 0.2s;
+      margin-top: 10px;
+    }
+    .restart-btn:hover {
+      background: #fff;
+      color: #23263a;
+    }
+     #btn-Return {
+    background-color: #23263a;
+    color: #ffb347;
+    font-size: 1.5rem;
+    padding: 12px 32px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(102, 82, 53, 0.45), 0 2px 8px rgba(0,0,0,0.18);
+    cursor: pointer;
+    margin-top: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    }
+    #btn-Return:hover {
+    color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Rock, Paper, Scissors</h1>
+  <div class="game-container">
+    <div class="score" id="score">Your Score: 0 | Computer Score: 0</div>
+    <div class="choices">
+      <button class="choice-btn" onclick="play('rock')">🪨<br>Rock</button>
+      <button class="choice-btn" onclick="play('paper')">📄<br>Paper</button>
+      <button class="choice-btn" onclick="play('scissors')">✂️<br>Scissors</button>
+    </div>
+    <div class="result" id="result"></div>
+    <button class="restart-btn" onclick="restartGame()">Restart</button>
+  </div>
+  </div>
+  <div style="width:100%; display:flex; justify-content:center; margin-top:32px;">
+  <button id="btn-Return" onclick="window.history.back()"><strong>Return</strong></button>
+  </div>
+  <script>
+    let userScore = 0;
+    let computerScore = 0;
+
+    function play(userChoice) {
+      const choices = ['rock', 'paper', 'scissors'];
+      const computerChoice = choices[Math.floor(Math.random() * 3)];
+      let resultText = '';
+      if (userChoice === computerChoice) {
+        resultText = `Tie! Both chose ${formatChoice(userChoice)}.`;
+      } else if (
+        (userChoice === 'rock' && computerChoice === 'scissors') ||
+        (userChoice === 'paper' && computerChoice === 'rock') ||
+        (userChoice === 'scissors' && computerChoice === 'paper')
+      ) {
+        resultText = `You won! ${formatChoice(userChoice)} won ${formatChoice(computerChoice)}.`;
+        userScore++;
+      } else {
+        resultText = `You lost! ${formatChoice(computerChoice)} won ${formatChoice(userChoice)}.`;
+        computerScore++;
+      }
+      document.getElementById('result').textContent = resultText;
+      document.getElementById('score').textContent = `Your Score: ${userScore} | Computer Score: ${computerScore}`;
+    }
+
+    function formatChoice(choice) {
+      if (choice === 'rock') return 'Rock';
+      if (choice === 'paper') return 'Paper';
+      if (choice === 'scissors') return 'Scissors';
+      return '';
+    }
+
+    function restartGame() {
+      userScore = 0;
+      computerScore = 0;
+      document.getElementById('score').textContent = `Your Score: 0 | Computer Score: 0`;
+      document.getElementById('result').textContent = '';
+      document.querySelector('.restart-btn').blur();
+    }
+  </script>
+</body>
+</html>

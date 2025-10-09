@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Background Effects</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Montserrat', Arial, sans-serif;
+      color: #fff;
+      overflow: hidden;
+    }
+    h2 {
+      position: absolute;
+      top: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #ffb347;
+      z-index: 10;
+      font-size: 2rem;
+      text-shadow: 0 2px 8px #23263a;
+    }
+    .section {
+      position: absolute;
+      top: 460px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90vw;
+      max-width: 900px;
+      background: rgba(34,38,58,0.7);
+      border-radius: 18px;
+      box-shadow: 0 8px 32px rgba(102, 82, 53, 0.45), 0 2px 8px rgba(0,0,0,0.18);
+      padding: 32px;
+      z-index: 10;
+      text-align: center;
+    }
+    .btn-switch {
+      margin: 0 8px;
+      padding: 10px 24px;
+      border-radius: 8px;
+      border: none;
+      background: #353866;
+      color: #ffb347;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-switch:hover {
+      background: #ffb347;
+      color: #23263a;
+    }
+    /* Animated gradient */
+    .bg-gradient {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      z-index: 0;
+      background: linear-gradient(120deg, #181a20, #181a20, #ffb347);
+      background-size: 400% 400%;
+      animation: gradientMove 10s ease infinite;
+    }
+    @keyframes gradientMove {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+    /* Canvas for particles, waves, bubbles */
+    #bg-canvas {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      z-index: 1;
+      pointer-events: none;
+    }
+    #btn-Return {
+    background-color: #23263a;
+    color: #ffb347;
+    font-size: 1.5rem;
+    padding: 12px 32px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(102, 82, 53, 0.45), 0 2px 8px rgba(0,0,0,0.18);
+    cursor: pointer;
+    margin-top: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    }
+    #btn-Return:hover {
+    color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-gradient" id="bg-gradient"></div>
+  <canvas id="bg-canvas"></canvas>
+  <h2>Interactive Background Effects</h2>
+  <div class="section">
+    <p>Choose an effect to preview:</p>
+    <button class="btn-switch" onclick="setEffect('gradient')">Animated Gradient</button>
+    <button class="btn-switch" onclick="setEffect('particles')">Particles</button>
+    <button class="btn-switch" onclick="setEffect('waves')">Waves</button>
+    <button class="btn-switch" onclick="setEffect('parallax')">Parallax</button>
+    <button class="btn-switch" onclick="setEffect('bubbles')">Bubbles</button>
+      <div>
+      <p><button id="btn-Return" onclick="window.history.back()">Return</button></p>
+      </div>
+  </div>
+  <script>
+    // Effect: Animated Gradient (default)
+    let currentEffect = 'gradient';
+    const bgGradient = document.getElementById('bg-gradient');
+    const canvas = document.getElementById('bg-canvas');
+    const ctx = canvas.getContext('2d');
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+
+    window.addEventListener('resize', function() {
+      resizeCanvas();
+      if (currentEffect === 'bubbles') {
+        initStars();
+      }
+    });
+    resizeCanvas();
+
+    function clearCanvas() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+
+    // Interactive particles
+    let particles = [];
+    function initParticles() {
+      particles = [];
+      for (let i = 0; i < 60; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          r: 6 + Math.random() * 8,
+          dx: (Math.random() - 0.5) * 1.5,
+          dy: (Math.random() - 0.5) * 1.5,
+          color: `rgba(255,179,71,${0.5 + Math.random() * 0.5})`
+        });
+      }
+    }
+    function drawParticles() {
+      clearCanvas();
+      for (let p of particles) {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, 2 * Math.PI);
+        ctx.fillStyle = p.color;
+        ctx.fill();
+        p.x += p.dx;
+        p.y += p.dy;
+        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+      }
+    }
+    canvas.addEventListener('mousemove', function(e) {
+      if (currentEffect !== 'particles') return;
+      for (let p of particles) {
+        let dist = Math.hypot(p.x - e.clientX, p.y - e.clientY);
+        if (dist < 80) {
+          p.dx += (Math.random() - 0.5) * 0.8;
+          p.dy += (Math.random() - 0.5) * 0.8;
+        }
+      }
+    });
+
+    // Animated waves
+    function drawWaves(time) {
+      clearCanvas();
+      ctx.save();
+      ctx.globalAlpha = 0.7;
+      for (let i = 0; i < 3; i++) {
+        ctx.beginPath();
+        for (let x = 0; x <= canvas.width; x += 2) {
+          let y = canvas.height/2 + Math.sin(x/60 + time/600 + i) * (30 + i*18);
+          ctx.lineTo(x, y + i*28);
+        }
+        ctx.strokeStyle = ['#ffb347','#353866','#23263a'][i];
+        ctx.lineWidth = 6 - i*2;
+        ctx.stroke();
+      }
+      ctx.restore();
+    }
+
+    // Parallax with mouse
+    let parallaxX = 0, parallaxY = 0;
+    function drawParallax() {
+      clearCanvas();
+      for (let i = 0; i < 5; i++) {
+        ctx.save();
+        ctx.globalAlpha = 0.5 + i*0.1;
+        ctx.fillStyle = i % 2 === 0 ? '#ffb347' : '#353866';
+        ctx.beginPath();
+        ctx.arc(canvas.width/2 + parallaxX*i*12, canvas.height/2 + parallaxY*i*12, 80 - i*12, 0, 2*Math.PI);
+        ctx.fill();
+        ctx.restore();
+      }
+    }
+    canvas.addEventListener('mousemove', function(e) {
+      if (currentEffect !== 'parallax') return;
+      parallaxX = (e.clientX - canvas.width/2) / 40;
+      parallaxY = (e.clientY - canvas.height/2) / 40;
+    });
+
+    // Bubbles rising
+    let bubbles = [];
+    function initBubbles() {
+      bubbles = [];
+      for (let i = 0; i < 40; i++) {
+        bubbles.push({
+          x: Math.random() * canvas.width,
+          y: canvas.height + Math.random() * 100,
+          r: 12 + Math.random() * 18,
+          speed: 1 + Math.random() * 2,
+          color: `rgba(${200+Math.random()*55},${150+Math.random()*80},${71+Math.random()*100},${0.3+Math.random()*0.5})`
+        });
+      }
+    }
+    function drawBubbles() {
+      clearCanvas();
+      for (let b of bubbles) {
+        ctx.beginPath();
+        ctx.arc(b.x, b.y, b.r, 0, 2*Math.PI);
+        ctx.fillStyle = b.color;
+        ctx.fill();
+        b.y -= b.speed;
+        if (b.y + b.r < 0) {
+          b.x = Math.random() * canvas.width;
+          b.y = canvas.height + Math.random() * 60;
+          b.r = 12 + Math.random() * 18;
+          b.speed = 1 + Math.random() * 2;
+        }
+      }
+    }
+
+    // Effect change
+    function setEffect(effect) {
+      currentEffect = effect;
+      bgGradient.style.display = effect === 'gradient' ? 'block' : 'none';
+      clearCanvas();
+      if (effect === 'particles') initParticles();
+      if (effect === 'bubbles') {
+        initBubbles();
+        drawBubbles();
+      }
+    }
+    setEffect('gradient');
+
+    // Animation loop
+    function animate(time) {
+      if (currentEffect === 'particles') drawParticles();
+      else if (currentEffect === 'waves') drawWaves(time);
+      else if (currentEffect === 'parallax') drawParallax();
+      else if (currentEffect === 'bubbles') drawBubbles();
+      requestAnimationFrame(animate);
+    }
+    animate();
+  </script>
+</body>
+</html>

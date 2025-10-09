@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TicTacToe - Leandro Ramos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      background: #181a20;
+      margin: 0;
+      color: #222;
+    }
+    .container {
+      max-width: 400px;
+      margin: 60px auto;
+      background: #23263a;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(102, 82, 53, 0.45), 0 2px 8px rgba(0,0,0,0.18);
+      padding: 2rem;
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 1.5rem;
+      color: #ffb347;
+      font-size: 2rem;
+    }
+    .board {
+      display: grid;
+      grid-template-columns: repeat(3, 80px);
+      grid-template-rows: repeat(3, 80px);
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 1.2rem;
+    }
+    .cell {
+      background: #f0f4f8;
+      border-radius: 8px;
+      font-size: 2.2rem;
+      color: #222;
+      border: 2px solid #cfd9df;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+      height: 80px;
+      width: 80px;
+      user-select: none;
+    }
+    .cell.x { color: #0077b6; }
+    .cell.o { color: #e63946; }
+    .cell:hover { background: #e0e7ef; }
+    .status {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: #b2becd;
+    }
+    .btn {
+      background: #ffb347;
+      color: #23263a;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 18px;
+      font-size: 1em;
+      cursor: pointer;
+      box-shadow: 0 8px 32px rgba(102, 82, 53, 0.45), 0 2px 8px rgba(0,0,0,0.18);
+      transition: background 0.2s;
+    }
+    .btn:hover {
+      background: #fff;
+      color: #23263a;
+    }
+     #btn-Return {
+    background-color: #23263a;
+    color: #ffb347;
+    font-size: 1.5rem;
+    padding: 12px 32px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(102, 82, 53, 0.45), 0 2px 8px rgba(0,0,0,0.18);
+    cursor: pointer;
+    margin-top: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    }
+    #btn-Return:hover {
+    color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>TicTacToe</h1>
+    <div class="status" id="status">Player's turn: X</div>
+    <div class="board" id="board">
+      <!-- Board cells -->
+      <div class="cell" data-idx="0"></div>
+      <div class="cell" data-idx="1"></div>
+      <div class="cell" data-idx="2"></div>
+      <div class="cell" data-idx="3"></div>
+      <div class="cell" data-idx="4"></div>
+      <div class="cell" data-idx="5"></div>
+      <div class="cell" data-idx="6"></div>
+      <div class="cell" data-idx="7"></div>
+      <div class="cell" data-idx="8"></div>
+    </div>
+    <button class="btn" onclick="resetBoard()">Restart</button>
+  </div>
+  <div style="width:100%; display:flex; justify-content:center; margin-top:32px;">
+  <button id="btn-Return" onclick="window.history.back()"><strong>Return</strong></button>
+  </div>
+  <script>
+    let currentPlayer = 'X';
+    let board = ['', '', '', '', '', '', '', '', ''];
+    const statusDiv = document.getElementById('status');
+    const cells = document.querySelectorAll('.cell');
+
+    function checkWinner() {
+      const wins = [
+        [0,1,2],[3,4,5],[6,7,8],
+        [0,3,6],[1,4,7],[2,5,8],
+        [0,4,8],[2,4,6]
+      ];
+      for (const [a,b,c] of wins) {
+        if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+          return board[a];
+        }
+      }
+      return board.includes('') ? null : 'Empate';
+    }
+
+    function handleCellClick(e) {
+      const idx = e.target.dataset.idx;
+      if (board[idx] || checkWinner()) return;
+      board[idx] = currentPlayer;
+      e.target.textContent = currentPlayer;
+      e.target.classList.add(currentPlayer.toLowerCase());
+      const winner = checkWinner();
+      if (winner) {
+        if (winner === 'Empate') {
+          statusDiv.textContent = 'Empate!';
+        } else {
+          statusDiv.textContent = `Jogador ${winner} venceu!`;
+        }
+      } else {
+        currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+        statusDiv.textContent = `Vez do jogador: ${currentPlayer}`;
+      }
+    }
+
+    function resetBoard() {
+      board = ['', '', '', '', '', '', '', '', ''];
+      cells.forEach(cell => {
+        cell.textContent = '';
+        cell.classList.remove('x', 'o');
+      });
+      currentPlayer = 'X';
+      statusDiv.textContent = 'Vez do jogador: X';
+    }
+
+    cells.forEach(cell => cell.addEventListener('click', handleCellClick));
+  </script>
+</body>
+</html>

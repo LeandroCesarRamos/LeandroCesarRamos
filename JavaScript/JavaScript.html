@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leandro Ramos - JavaScript Skills</title>
+  <link rel="stylesheet" href="assets/LeandroRamos-Personal-Portifolio.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="sidebar">
+    <div class="logo">Leandro</div>
+    <ul>
+      <li><a href="#home" class="active">JavaScript</a></li>
+      <li><a href="#about">About my skill</a></li>
+      <li><a href="#portfolio">Projects with JavaScript</a></li>
+      <li><a href="#skills"><button= onclick="window.location.href='../index.html'">Return to Home</button></a></li>
+    </ul>
+  </nav>
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <h1>I'll talk a little about my skill with <span>JavaScript</span></h1>
+        <p class="hero-subtitle">In this topic, I'll talk a little about my JavaScript skills and also demonstrate some projects using this incredible tool. In the table next to it I show an example of its use.</p>
+        <h2 class="title">Enter a city in the input field to find its current weather.</h2>
+      </div>
+      <div class="hero-img">
+          <iframe src="WeatherForecast/WeatherForecast.html" title="Weather Forecast" style="width:400px; height:450px; object-fit:contain;  border-radius:16px; border:8px solid #23263a; box-shadow: 0 8px 32px rgba(102, 82, 53, 0.45), 0 2px 8px rgba(0,0,0,0.18);; background:#23263a;"></iframe>
+      </div>
+    </section>
+    <section class="about" id="about">
+      <h2 class="reveal-title">About my JavaScript skill</h2>
+      <div class="about-flex" style="display: flex; align-items: center; gap: 32px; flex-wrap: wrap;">
+        <div class="about-text reveal" style="flex: 1 1 300px; min-width: 220px;">
+          <p>When I started learning JavaScript, I was impressed by the power this language offers for creating dynamic and interactive pages.</p>
+          <p>Initially, I had little knowledge about how to manipulate elements on the screen or respond to user actions, but my curiosity motivated me to explore its possibilities further. Today, JavaScript is an essential tool in all my projects.</p>
+          <p>With JavaScript, I develop features that make websites more intelligent and responsive, such as form validation, animations, data manipulation, and integration with external APIs. I use modern language features, such as ES6+, to write cleaner and more efficient code.</p>
+          <p>In addition, I work with:<br>
+          • DOM manipulation to dynamically change and create elements;<br>
+          • Events to respond to user interactions in real time;<br>
+          • Fetch API and AJAX to retrieve and send data without reloading the page;<br>
+          • Local Storage and Session Storage to store user information;<br>
+          • Frameworks and libraries such as React and jQuery to speed up development;<br>
+          • Best practices for code organization and modularization.<br></p>
+          <p>JavaScript is what allows me to transform ideas into innovative digital experiences, making my projects more interactive, functional, and enjoyable for the user.</p>
+        </div>
+        <div class="about-img" style="flex: 0 0 180px; display: flex; justify-content: center; align-items: center;">
+          <img src="https://www.vhv.rs/dpng/d/456-4562295_library-of-javascript-icon-graphic-freeuse-png-files.png" alt="JavaScript" style="width:180px; height:180px; object-fit:cover; border-radius:50%; border:6px solid #353866; box-shadow:0 4px 16px #0002;">
+        </div>
+      </div>
+    </section>
+    <br><br><br>
+    <section class="portfolio" id="portfolio">
+      <h2 class="reveal-title">Projects</h2>
+      <div class="projects">
+        <ul class="skills-list reveal">
+        <div class="project-card reveal">
+          <img src="KanbanBoard.png" alt="Kanban Board">
+          <div class="project-info">
+            <h3 style="text-align:center;"><a href="KanbanBoard/KanbanBoard.html">
+             Kanban Board</a></h3>
+            <p style="text-align:left;">Kanban board created with JavaScript, HTML and CSS, allowing the user to interact by dragging and dropping tasks between columns.</p>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <img src="2DPlatformGame.png" alt="2D Platform Game">
+          <div class="project-info">
+            <h3 style="text-align:center;"><a href="2DPlatformGame/2DPlatformGame.html">
+             2D Platform Game</a></h3>
+            <p style="text-align:left;">A 2D game created with JavaScript in HTML5, also using CSS and Canvas. The goal is to collect the coin.</p>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <img src="RockPaperScissorsGame.png" alt="Rock Paper Scissors Game">
+          <div class="project-info">
+            <h3 style="text-align:center;"><a href="RockPaperScissorsGame/RockPaperScissorsGame.html">
+             Rock Paper Scissors Game</a></h3>
+            <p style="text-align:left;">The famous rock, paper, scissors game. Built using JavaScript in HTML5. Also using CSS to enhance the aesthetics.</p>
+          </div>
+        </div>
+        </ul>
+      </div>
+    </div>
+    </section>
+    <footer>
+      <p>&copy; 2025 Leandro Ramos. All rights reserved.</p>
+    </footer>
+  </main>
+  <script src="assets/reveal-titles.js"></script>
+  <script src="assets/menu-highlight.js"></script>
+</body>
+</html>

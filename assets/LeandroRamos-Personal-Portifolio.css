@@ -1,3 +1,19 @@
+/* Faixa azul escuro decorativa entre seções */
+.blue-divider {
+  width: 100%;
+  height: 300px;
+  background: linear-gradient(120deg, #23263a 60%, #353866 100%);
+  margin: 0 auto 40px auto;
+}
+/* Skills list links - amarelo */
+.skills-list a {
+  color: #ffb347;
+  text-decoration: none;
+  font-weight: bold;
+}
+.skills-list a:hover {
+  color: #fff;
+}
 body {
   margin: 0;
   font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
@@ -57,7 +73,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 80vh;
+  min-height: 90vh;
   padding: 60px 8% 40px 8%;
   background: linear-gradient(120deg, #23263a 60%, #353866 100%);
 }
@@ -121,6 +137,12 @@ h2 {
   max-width: 700px;
   color: #b2becd;
 }
+.aboutMySkills {
+  font-size: 1.1rem;
+  max-width: 2000px;
+  color: #b2becd;
+  text-align: left;
+}
 
 .portfolio .projects {
   display: flex;
@@ -129,12 +151,12 @@ h2 {
   justify-content: flex-start;
 }
 .project-card {
-  background: #23263a;
+  background: #181a20;
   border-radius: 18px;
   box-shadow: 0 2px 16px rgba(34,34,59,0.10);
   width: 320px;
   padding: 0 0 18px 0;
-  text-align: left;
+  text-align: center;
   transition: transform 0.2s, box-shadow 0.2s;
   overflow: hidden;
 }
@@ -156,6 +178,7 @@ h2 {
   margin: 0 0 8px 0;
   color: #ffb347;
   font-size: 1.2rem;
+  text-align: center;
 }
 .project-card p {
   color: #b2becd;
@@ -203,12 +226,16 @@ h2 {
 }
 
 footer {
-  background: #23263a;
+  background: linear-gradient(120deg, #23263a 60%, #353866 100%);
   color: #b2becd;
   text-align: center;
-  padding: 24px 0 12px 0;
+  padding: 32px 0;
   font-size: 1rem;
   letter-spacing: 1px;
+  width: 115vw;
+  left: 0vw;
+  position: absolute;
+  margin-left: calc(-50vw + 50%);
 }
 
 .reveal {

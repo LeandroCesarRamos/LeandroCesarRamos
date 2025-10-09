@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Animated Buttons</title>
+  <style>
+    body {
+      background: #181a20;
+      color: #fff;
+      font-family: 'Montserrat', Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+    }
+    h2 {
+      color: #ffb347;
+      margin-bottom: 24px;
+    }
+    .btn {
+      padding: 16px 40px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #353866;
+      color: #ffb347;
+      box-shadow: 0 4px 16px #0005;
+      transition: background 0.3s, color 0.3s, transform 0.2s;
+      margin: 12px;
+    }
+    .btn:hover {
+      background: #ffb347;
+      color: #23263a;
+      transform: scale(1.08);
+    }
+    .btn-glow {
+      box-shadow: 0 0 16px #ffb347, 0 4px 16px #0005;
+      transition: box-shadow 0.3s, background 0.3s;
+    }
+    .btn-glow:hover {
+      background: #23263a;
+      color: #ffb347;
+      box-shadow: 0 0 32px #ffb347, 0 4px 24px #353866;
+    }
+    .btn-slide {
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+    .btn-slide::before {
+      content: '';
+      position: absolute;
+      left: -100%;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: #ffb347;
+      z-index: -1;
+      transition: left 0.3s;
+    }
+    .btn-slide:hover::before {
+      left: 0;
+    }
+    .btn-slide:hover {
+      color: #23263a;
+    }
+    #btn-Return {
+    background-color: #23263a;
+    color: #ffb347;
+    font-size: 1.5rem;
+    padding: 12px 32px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(102, 82, 53, 0.45), 0 2px 8px rgba(0,0,0,0.18);
+    border: none;
+    cursor: pointer;
+    margin-top: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    }
+    #btn-Return:hover {
+    color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <h2>CSS Animated Buttons</h2>
+  <button class="btn">Simple Button</button>
+  <button class="btn btn-glow">Button with Glow</button>
+  <button class="btn btn-slide">Button with Slide</button>
+  <div>
+      <button id="btn-Return" onclick="window.history.back()">Return</button>
+  </div>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Calculator</title>
+  <style>
+      *{
+           margin: 0;
+           padding: 0;
+      }
+    body {
+      background: #181a20;
+      background-size: cover;
+      color: #ffb347;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      height: 100vh;
+    }
+    .calc-container {
+  background: #23263a;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(102, 82, 53, 0.45), 0 2px 8px rgba(0,0,0,0.18);
+  border: 10px solid #1f212b;
+  max-width: 230px;
+  margin: 48px auto 0 auto;
+  }
+
+/* Centralizar a tabela de botões dentro da calculadora */
+.calc-container table {
+  margin-left: auto;
+  margin-right: auto;
+}
+    .button{
+      width: 50px;
+      height: 50px;
+      font-size: 25px;
+      cursor: pointer;
+      margin: 1px;
+      background-color: rgb(31,31,31);
+      color: #fff
+    }
+    .button:hover{
+      background-color: black;
+    }
+    #Result{
+        background-color: white;
+        width: 200px;
+        height: 30px;
+        margin: 5px auto;
+        font-size: 25px;
+        padding: 5px;
+        color: black;
+        text-align: right;
+        word-break: break-all;
+        overflow-x: auto;
+    }
+    #btn-Return {
+  background-color: #23263a;
+  color: #ffb347;
+  font-size: 1.5rem;
+  padding: 12px 32px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(102, 82, 53, 0.45), 0 2px 8px rgba(0,0,0,0.18);
+  border: 10px solid #1f212b;
+  cursor: pointer;
+  margin-top: 24px;
+  margin-left: auto;
+  margin-right: auto;
+  }
+  #btn-Return:hover {
+  color: #fff;
+  }
+  </style>
+</head>
+<body>
+  <div class="body">
+      <div class="calc-container">
+          <h2>Simple Calculator</h2>
+          <p id="Result"></p>
+          <table>
+              <tr>
+                  <td><button class="button" onclick="clean()">C</button></td>
+                  <td><button class="button" onclick="back()"><</button></td>
+                  <td><button class="button" onclick="insert('/')">/</button></td>
+                  <td><button class="button" onclick="insert('*')">*</button></td>
+              </tr>
+              <tr>
+                   <td><button class="button" onclick="insert('7')">7</button></td>
+                   <td><button class="button" onclick="insert('8')">8</button></td>
+                   <td><button class="button" onclick="insert('9')">9</button></td>
+                   <td><button class="button" onclick="insert('-')">-</button></td>
+              </tr>
+              <tr>
+                   <td><button class="button" onclick="insert('4')">4</button></td>
+                   <td><button class="button" onclick="insert('5')">5</button></td>
+                   <td><button class="button" onclick="insert('6')">6</button></td>
+                   <td><button class="button" onclick="insert('+')">+</button></td>
+              </tr>
+              <tr>
+                   <td><button class="button" onclick="insert('1')">1</button></td>
+                   <td><button class="button" onclick="insert('2')">2</button></td>
+                   <td><button class="button" onclick="insert('3')">3</button></td>
+                   <td rowspan="2"><button class="button" onclick="Calculate()" style="height: 106px;">=</button></td>
+              </tr>
+              <tr>
+                   <td colspan="2"><button class="button" onclick="insert('0')" style="width: 106px;">0</button></td>
+                   <td><button class="button" onclick="insert('.')">.</button></td>
+              </tr>
+          </table>
+      </div>
+  </div>
+  <script>
+      function insert(num)
+      {
+          var number = document.getElementById('Result').innerHTML;
+          document.getElementById('Result').innerHTML = number + num;
+      }
+      function clean()
+      {
+          document.getElementById('Result').innerHTML = "";
+      }
+      function back()
+      {
+          var Result = document.getElementById('Result').innerHTML;
+          document.getElementById('Result').innerHTML = Result.substring(0, Result.length -1);
+      }
+      function Calculate()
+      {
+           var Result = document.getElementById('Result').innerHTML;
+           if(Result)
+           {
+               document.getElementById('Result').innerHTML = eval(Result);
+           }
+           else
+           {
+               document.getElementById('Result').innerHTML = "Error"
+           }
+      }
+               document.getElementById('num1').addEventListener('input', function() {
+               document.getElementById('Result').textContent = '';
+      });
+               document.getElementById('num2').addEventListener('input', function() {
+               document.getElementById('Result').textContent = '';
+      });
+  </script>
+<div style="width:100%; display:flex; justify-content:center; margin-top:32px;">
+  <button id="btn-Return" onclick="window.history.back()"><strong>Return</strong></button>
+</div>
+</body>
+</html>

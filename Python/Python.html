@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leandro Ramos - Python Skills</title>
+  <link rel="stylesheet" href="assets/LeandroRamos-Personal-Portifolio.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="sidebar">
+    <div class="logo">Leandro</div>
+    <ul>
+      <li><a href="#home" class="active">Python</a></li>
+      <li><a href="#about">About my skill</a></li>
+      <li><a href="#portfolio">Projects with Python</a></li>
+      <li><a href="#skills"><button= onclick="window.location.href='../index.html'">Return to Home</button></a></li>
+    </ul>
+  </nav>
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <h1>I'll talk a little about my skill with <span>Python</span></h1>
+        <p class="hero-subtitle">In this topic, you will learn about my Python skills and some projects using this tool.</p>
+      </div>
+      <div class="hero-img">
+          <iframe src="portfolio/portfolio.html" alt="Portfolio" style="width:510px; height:340px; object-fit:contain; border-radius:16px; border:8px solid #353866; box-shadow:0 8px 32px rgba(0,0,0,0.18); background:#23263a;"></iframe>
+      </div>
+    </section>
+    <section class="about" id="about">
+      <h2 class="reveal-title">About my Python skill</h2>
+      <div class="about-flex" style="display: flex; align-items: center; gap: 32px; flex-wrap: wrap;">
+        <div class="about-text reveal" style="flex: 1 1 300px; min-width: 220px;">
+          <p>When I started learning Python, I had little experience with programming and automation. I knew Python was a powerful tool, but I didn’t realize how versatile and essential it would become in my daily work. My curiosity led me to explore its capabilities, from simple scripts to complex projects. Today, Python is a core part of almost everything I build.</p>
+          <p>With Python, I develop efficient solutions for web applications, data analysis, automation, and game development. I take advantage of its rich ecosystem, including libraries for artificial intelligence, data visualization, and web frameworks like Flask and Django.</p>
+          <p>In addition, I work with:<br>
+          • Object-oriented programming for scalable and maintainable code.<br>
+          • Integration of APIs and external services for dynamic applications.<br>
+          • Data manipulation and analysis using pandas and NumPy.<br>
+          • Automation of repetitive tasks to improve productivity.<br>
+          • Development of interactive games and graphical interfaces.<br>
+          • Testing and debugging to ensure code quality and reliability.<br></p>
+          <p>Python is also the foundation of my technical projects, allowing me to deliver modern, efficient, and innovative solutions to a wide range of challenges.</p>
+        </div>
+        <div class="about-img" style="flex: 0 0 180px; display: flex; justify-content: center; align-items: center;">
+          <img src="https://skillicons.dev/icons?i=python&theme=dark" alt="html" style="width:180px; height:180px; object-fit:cover; border-radius:50%; border:6px solid #353866; box-shadow:0 4px 16px #0002;">
+        </div>
+      </div>
+    </section>
+    <br><br><br>
+    <section class="portfolio" id="portfolio">
+      <h2 class="reveal-title">Projects</h2>
+      <div class="projects">
+        <ul class="skills-list reveal">
+        <div class="project-card reveal">
+          <img src="TicTacToe.png" alt="TicTacToe Game">
+          <div class="project-info">
+            <h3 style="text-align:center;"><a href="TicTacToe/build/web/index.html">
+             TicTacToe Game</a></h3>
+            <p style="text-align:left;">Tic Tac Toe game made with Python, using HTML5 and CSS auxiliary tools.</p>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <img src="InteractivePriceTable.png" alt="Interactive Price Table">
+          <div class="project-info">
+            <h3 style="text-align:center;"><a href="InteractivePriceTable/InteractivePriceTable.html">
+             Interactive Price Table</a></h3>
+            <p>Interactive table created in HTML5 with CSS and JavaScript to check product prices by their names or categories.</p>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <img src="PersonalBudgetSimulator.png" alt="Personal Budget Simulator">
+          <div class="project-info">
+            <h3 style="text-align:center;"><a href="PersonalBudgetSimulator/PersonalBudgetSimulator.html">
+             Personal Budget Simulator</a></h3>
+            <p>Personal budget simulator made in HTML with CSS and JavaScript.</p>
+          </div>
+        </div>
+        </ul>
+      </div>
+    </div>
+    </section>
+    <footer>
+      <p>&copy; 2025 Leandro Ramos. All rights reserved.</p>
+    </footer>
+  </main>
+  <script src="assets/reveal-titles.js"></script>
+  <script src="assets/menu-highlight.js"></script>
+</body>
+</html>

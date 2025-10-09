@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Budget Simulator</title>
+  <style>
+    body {
+      background: #181a20;
+      color: #fff;
+      font-family: 'Montserrat', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .budget-container {
+      background: #23263a;
+      border-radius: 18px;
+      box-shadow: 0 8px 32px rgba(102, 82, 53, 0.45), 0 2px 8px rgba(0,0,0,0.18);
+      padding: 40px 32px;
+      max-width: 420px;
+      width: 100%;
+    }
+    h2 {
+      color: #ffb347;
+      text-align: center;
+      margin-bottom: 32px;
+      font-size: 2rem;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #ffb347;
+    }
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 18px;
+      border-radius: 8px;
+      border: none;
+      font-size: 1.1rem;
+      background: #181a20;
+      color: #fff;
+    }
+    input[type="number"]:focus {
+      outline: 2px solid #ffb347;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #ffb347;
+      color: #23263a;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      margin-bottom: 18px;
+      transition: background 0.2s, color 0.2s;
+    }
+    button:hover {
+      background: #fff;
+      color: #353866;
+    }
+    .result {
+      background: #282930;
+      border-radius: 8px;
+      padding: 18px;
+      margin-top: 18px;
+      color: #ffb347;
+      font-size: 1.2rem;
+      text-align: center;
+      box-shadow: 0 2px 8px #0005;
+    }
+    @media (max-width: 600px) {
+      .budget-container {
+        padding: 16px 4px;
+      }
+      h2 {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="budget-container">
+    <h2>Personal Budget Simulator</h2>
+    <form id="budgetForm" onsubmit="return calculateBudget()">
+      <label for="incomes">Monthly Incomes ($)</label>
+      <input type="number" id="incomes" min="0" step="0.01" required>
+      <label for="expenses">Monthly Expenses ($)</label>
+      <input type="number" id="expenses" min="0" step="0.01" required>
+      <label for="objective">Savings Goal ($)</label>
+      <input type="number" id="objective" min="0" step="0.01">
+      <button type="submit">Calculate</button>
+    </form>
+    <div>
+      <button id="btn-Return" onclick="window.history.back()">Return</button>
+    </div>
+    <div class="result" id="result"></div>
+  </div>
+  <script>
+    function calculateBudget() {
+      var incomes = parseFloat(document.getElementById('incomes').value) || 0;
+      var expenses = parseFloat(document.getElementById('expenses').value) || 0;
+      var objective = parseFloat(document.getElementById('objective').value) || 0;
+      var balance = incomes - expenses;
+      var result = '';
+      if (balance > 0) {
+        result += `You have a positive balance of R$ ${balance.toFixed(2)} this month.`;
+        if (objective > 0) {
+          if (balance >= objective) {
+            result += `<br>Congratulations! You've reached your savings goal.`;
+          } else {
+            result += `<br>You need to save more R$ ${(objective - balance).toFixed(2)} to achieve your goal.`;
+          }
+        }
+      } else if (balance < 0) {
+        result += `Attention! Your balance is negative R$ ${Math.abs(balance).toFixed(2)}.`;
+      } else {
+        result += `Your balance is zero this month.`;
+      }
+      document.getElementById('result').innerHTML = result;
+      return false;
+    }
+  </script>
+</body>
+</html>

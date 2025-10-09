@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Letter Animation - CSS Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      color: #ffb347;
+      background: linear-gradient(120deg, #23263a 60%, #353866 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      border: none;
+      box-shadow: none;
+      margin: 0;
+      overflow: hidden;
+    }
+    .animated-name {
+      margin-top: 40px;
+      font-size: 2.5em;
+      color: white;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+    .animated-name span {
+      display: inline-block;
+      transition: transform 0.3s cubic-bezier(.68,-0.55,.27,1.55), color 0.3s;
+      cursor: pointer;
+      margin: 0 2px;
+    }
+    .animated-name span:hover {
+      transform: translateY(-20px) scale(1.2) rotate(-10deg);
+      color: #0077ff;
+      text-shadow: 0 4px 12px #0077ff55;
+    }
+    .input-area {
+      margin-top: 20px;
+    }
+    .input-area input {
+      font-size: 1.2em;
+      padding: 6px 12px;
+    }
+    .input-area button {
+      font-size: 1.1em;
+      padding: 6px 16px;
+      margin-left: 8px;
+      background: #23263a;
+      color: #ffb347;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .input-area button:hover {
+      background: #282930;
+    }
+  </style>
+</head>
+<body>
+  <h2>Enter a phrase to animate:</h2>
+  <div class="input-area">
+    <input type="text" id="phrase" placeholder="Ex: Leandro Ramos">
+    <button onclick="animateLetters()">Animate</button>
+  </div>
+  <br>
+  <h2>Hover over the letters below</h2>
+  <div class="animated-name" id="result"></div>
+  <script>
+    function animateLetters() {
+      const phrase = document.getElementById('phrase').value;
+      const result = document.getElementById('result');
+      result.innerHTML = '';
+      for (let letter of phrase) {
+        if (letter === ' ') {
+          result.innerHTML += '<span style="width:16px;display:inline-block;"></span>';
+        } else {
+          result.innerHTML += `<span>${letter}</span>`;
+        }
+      }
+    }
+    // Inicializa com um exemplo
+    document.getElementById('phrase').value = 'Leandro Ramos';
+    animateLetters();
+  </script>
+</body>
+</html>

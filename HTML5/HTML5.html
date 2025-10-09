@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leandro Ramos - HTML5 Skills</title>
+  <link rel="stylesheet" href="assets/LeandroRamos-Personal-Portifolio.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="sidebar">
+    <div class="logo">Leandro</div>
+    <ul>
+      <li><a href="#home" class="active">HTML5</a></li>
+      <li><a href="#about">About my skill</a></li>
+      <li><a href="#portfolio">Projects with HTML5</a></li>
+      <li><a href="#skills"><button= onclick="window.location.href='../index.html'">Return to Home</button></a></li>
+    </ul>
+  </nav>
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <h1>I'll talk a little about my skill with <span>HTML5</span></h1>
+        <p class="hero-subtitle">In this topic, you'll learn a little about my HTML5 skills, how I got started, and its advantages from my perspective.</p>
+      </div>
+      <div class="hero-img">
+          <iframe src="portfolio/portfolio.html" alt="Portfolio" style="width:510px; height:340px; object-fit:contain; border-radius:16px; border:8px solid #353866; box-shadow:0 8px 32px rgba(0,0,0,0.18); background:#23263a;"></iframe>
+      </div>
+    </section>
+    <section class="about" id="about">
+      <h2 class="reveal-title">About my HTML5 skill</h2>
+      <div class="about-flex" style="display: flex; align-items: center; gap: 32px; flex-wrap: wrap;">
+        <div class="about-text reveal" style="flex: 1 1 300px; min-width: 220px;">
+          <p>When I started in this field, I didn’t have much knowledge about how to create or manage a website. I knew that each site had a specific purpose, but I never imagined how it actually worked behind the scenes. My curiosity led me to research and learn about the entire creation process. Today, I use this skill daily in almost everything I build.</p>
+          <p>With HTML5, I create responsive websites and take advantage of its new features, such as embedding audio and video without external plugins. I also frequently use geolocation tools, which are essential for projects that require location-based functionality.</p>
+          <p>In addition, I work with:<br>
+          • Semantic elements to improve accessibility and SEO.<br>
+          • Forms with advanced validation and input types.<br>
+          • Integration of APIs for dynamic and interactive content.<br>
+          • Canvas and SVG for graphics and animations.<br>
+          • Local storage and session storage for client-side data management.<br>
+          • Progressive enhancement to ensure compatibility across browsers and devices.<br></p>
+          <p>HTML5 is the foundation of my web development projects, allowing me to deliver modern, efficient, and user-friendly experiences.</p>
+        </div>
+        <div class="about-img" style="flex: 0 0 180px; display: flex; justify-content: center; align-items: center;">
+          <img src="https://skillicons.dev/icons?i=html&theme=dark" alt="html" style="width:180px; height:180px; object-fit:cover; border-radius:50%; border:6px solid #353866; box-shadow:0 4px 16px #0002;">
+        </div>
+      </div>
+    </section>
+    <br><br><br>
+    <section class="portfolio" id="portfolio">
+      <h2 class="reveal-title">Projects</h2>
+      <div class="projects">
+        <ul class="skills-list reveal">
+        <div class="project-card reveal">
+          <img src="SimpleCalculator.png" alt="Simple Calculator">
+          <div class="project-info">
+            <h3 style="text-align:center;"><a href="SimpleCalculator/SimpleCalculator.html">
+             Simple Calculator</a></h3>
+            <p>A simple calculator made in HTML5 with JavaScript and CSS.</p>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <img src="InteractivePriceTable.png" alt="Interactive Price Table">
+          <div class="project-info">
+            <h3 style="text-align:center;"><a href="InteractivePriceTable/InteractivePriceTable.html">
+             Interactive Price Table</a></h3>
+            <p>Interactive table created in HTML5 with CSS and JavaScript to check product prices by their names or categories.</p>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <img src="PersonalBudgetSimulator.png" alt="Personal Budget Simulator">
+          <div class="project-info">
+            <h3 style="text-align:center;"><a href="PersonalBudgetSimulator/PersonalBudgetSimulator.html">
+             Personal Budget Simulator</a></h3>
+            <p>Personal budget simulator made in HTML with CSS and JavaScript.</p>
+          </div>
+        </div>
+        </ul>
+      </div>
+    </div>
+    </section>
+    <footer>
+      <p>&copy; 2025 Leandro Ramos. All rights reserved.</p>
+    </footer>
+  </main>
+  <script src="assets/reveal-titles.js"></script>
+  <script src="assets/menu-highlight.js"></script>
+</body>
+</html>

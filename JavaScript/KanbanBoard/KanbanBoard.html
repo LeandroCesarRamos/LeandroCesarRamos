@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kanban Board - Leandro Ramos</title>
+  <link rel="stylesheet" href="../../assets/LeandroRamos-Personal-Portifolio.css">
+  <style>
+    body {
+      background: #181a20;
+      font-family: 'Montserrat', Arial, sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1 {
+      color: #ffb347;
+      margin-top: 32px;
+      font-size: 2.5em;
+      letter-spacing: 2px;
+      text-align: center;
+    }
+    .kanban-board {
+      display: flex;
+      gap: 32px;
+      margin: 40px 0;
+      width: 90vw;
+      max-width: 1200px;
+      justify-content: center;
+    }
+    .kanban-column {
+      background: #23263a;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(102, 82, 53, 0.45), 0 2px 8px rgba(0,0,0,0.18);
+      padding: 24px 16px;
+      width: 300px;
+      min-height: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .kanban-column h2 {
+      color: #fff;
+      margin-bottom: 16px;
+      font-size: 1.3em;
+      letter-spacing: 1px;
+    }
+    .kanban-cards {
+      flex: 1;
+      width: 100%;
+      min-height: 200px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .kanban-card {
+      background: #353866;
+      color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+      padding: 16px 12px;
+      font-size: 1.1em;
+      cursor: grab;
+      transition: box-shadow 0.2s, transform 0.2s;
+      user-select: none;
+      border-left: 6px solid #0077ff;
+    }
+    .kanban-card.dragging {
+      opacity: 0.6;
+      box-shadow: 0 8px 32px #0077ff55;
+      transform: scale(1.05);
+    }
+    .add-card-btn {
+      background: #ffb347;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 18px;
+      font-size: 1em;
+      margin-top: 12px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px #ffd90033;
+      transition: background 0.2s;
+    }
+    .add-card-btn:hover {
+      background: #51ff0033;
+    }
+    .clear-card-btn {
+      background: #ffac47;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 18px;
+      font-size: 1em;
+      margin-top: 12px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px #ffd90033;
+      transition: background 0.2s;
+    }
+    .clear-card-btn:hover {
+      background: #ff2a0033;
+    }
+    .kanban-input {
+      width: 90%;
+      padding: 6px 10px;
+      border-radius: 6px;
+      border: 1px solid #353866;
+      margin-bottom: 8px;
+      font-size: 1em;
+    }
+    #btn-Return {
+    background-color: #23263a;
+    color: #ffb347;
+    font-size: 1.5rem;
+    padding: 12px 32px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(102, 82, 53, 0.45), 0 2px 8px rgba(0,0,0,0.18);
+    border: none;
+    cursor: pointer;
+    margin-top: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    }
+    #btn-Return:hover {
+    color: #fff;
+    }
+    @media (max-width: 900px) {
+      .kanban-board {
+        flex-direction: column;
+        align-items: center;
+      }
+      .kanban-column {
+        width: 90vw;
+        max-width: 400px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Kanban Board</h1>
+  <div class="kanban-board">
+    <div class="kanban-column" data-status="todo">
+      <h2>To Do</h2>
+      <div class="kanban-cards" id="todo-cards"></div>
+      <input type="text" class="kanban-input" id="todo-input" placeholder="New task...">
+      <button class="add-card-btn" onclick="addCard('todo')">Add</button>
+      <button class="clear-card-btn" onclick="clearCards('todo')">Clear</button>
+    </div>
+    <div class="kanban-column" data-status="doing">
+      <h2>Doing</h2>
+      <div class="kanban-cards" id="doing-cards"></div>
+      <input type="text" class="kanban-input" id="doing-input" placeholder="New task...">
+      <button class="add-card-btn" onclick="addCard('doing')">Add</button>
+      <button class="clear-card-btn" onclick="clearCards('doing')">Clear</button>
+    </div>
+    <div class="kanban-column" data-status="done">
+      <h2>Done</h2>
+      <div class="kanban-cards" id="done-cards"></div>
+      <input type="text" class="kanban-input" id="done-input" placeholder="New task...">
+      <button class="add-card-btn" onclick="addCard('done')">Add</button>
+      <button class="clear-card-btn" onclick="clearCards('done')">Clear</button>
+    </div>
+  </div>
+  <div>
+      <button id="btn-Return" onclick="window.history.back()">Return</button>
+  </div>
+  <script>
+    let draggedCard = null;
+
+    function addCard(status) {
+      const input = document.getElementById(status + '-input');
+      const value = input.value.trim();
+      if (!value) return;
+      const card = document.createElement('div');
+      card.className = 'kanban-card';
+      card.textContent = value;
+      card.draggable = true;
+      card.addEventListener('dragstart', onDragStart);
+      card.addEventListener('dragend', onDragEnd);
+      document.getElementById(status + '-cards').appendChild(card);
+      input.value = '';
+    }
+
+    function clearCards(status) {
+      const cardsArea = document.getElementById(status + '-cards');
+      // Remove apenas os cartões que estão atualmente na coluna
+      Array.from(cardsArea.children).forEach(card => cardsArea.removeChild(card));
+    }
+
+    function onDragStart(e) {
+      draggedCard = e.target;
+      e.target.classList.add('dragging');
+    }
+    function onDragEnd(e) {
+      e.target.classList.remove('dragging');
+      draggedCard = null;
+    }
+
+    document.querySelectorAll('.kanban-cards').forEach(area => {
+      area.addEventListener('dragover', function(e) {
+        e.preventDefault();
+        if (draggedCard) {
+          area.style.background = '#35386633';
+        }
+      });
+      area.addEventListener('dragleave', function(e) {
+        area.style.background = '';
+      });
+      area.addEventListener('drop', function(e) {
+        e.preventDefault();
+        if (draggedCard) {
+          area.appendChild(draggedCard);
+          area.style.background = '';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
