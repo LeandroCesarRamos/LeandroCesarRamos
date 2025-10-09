@@ -61,12 +61,12 @@ def draw_board():
     pygame.draw.rect(screen, X_COLOR, btn_rect, border_radius=8)
     btn_text = pygame.font.SysFont('Roboto', 24, bold=True).render('Restart', True, CARD_COLOR)
     screen.blit(btn_text, (btn_rect.x + btn_rect.width//2 - btn_text.get_width()//2, btn_rect.y + 6))
-    # Botão voltar
-    back_rect = pygame.Rect(WIDTH//2+30, HEIGHT-50, 160, 36)
-    pygame.draw.rect(screen, X_COLOR, back_rect, border_radius=8)
-    back_text = pygame.font.SysFont('Roboto', 24, bold=True).render('Return', True, CARD_COLOR)
-    screen.blit(back_text, (back_rect.x + back_rect.width//2 - back_text.get_width()//2, back_rect.y + 6))
-    return btn_rect, back_rect
+    # Botão Close Game
+    close_rect = pygame.Rect(WIDTH//2+30, HEIGHT-50, 160, 36)
+    pygame.draw.rect(screen, O_COLOR, close_rect, border_radius=8)
+    close_text = pygame.font.SysFont('Roboto', 24, bold=True).render('Close Game', True, CARD_COLOR)
+    screen.blit(close_text, (close_rect.x + close_rect.width//2 - close_text.get_width()//2, close_rect.y + 6))
+    return btn_rect, close_rect
 
 def check_winner():
     wins = [
@@ -160,12 +160,16 @@ while True:
                         else:
                             current_player = 'O'
             # Botões
-            btn_rect, back_rect = draw_board()
+            btn_rect, close_rect = draw_board()
             if btn_rect.collidepoint(event.pos):
                 reset_board()
-            if back_rect.collidepoint(event.pos):
-                pygame.quit()
-                sys.exit()
+            if close_rect.collidepoint(event.pos):
+                try:
+                    import js
+                    js.window.close()
+                except:
+                    pygame.quit()
+                    sys.exit()
     # Bot joga como 'O' usando minimax
     if not game_over and current_player == 'O':
         pygame.time.wait(400)
