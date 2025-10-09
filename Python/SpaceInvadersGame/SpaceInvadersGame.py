@@ -6,7 +6,7 @@ import sys
 pygame.init()
 
 # Configurações da tela
-WIDTH, HEIGHT = 600, 700
+WIDTH, HEIGHT = 800, 600
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption('Space Invaders - Leandro Ramos')
 clock = pygame.time.Clock()
@@ -16,6 +16,9 @@ WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 GREEN = (0, 255, 0)
 RED = (255, 0, 0)
+MENU_BG = (24, 26, 32)  # #181a20
+BTN_COLOR = (255, 179, 71)  # #ffb347
+BTN_TEXT_COLOR = (35, 38, 58)  # #23263a
 
 # Jogador
 player_img = pygame.Surface((50, 30))
@@ -37,6 +40,8 @@ enemy_speed = 2
 level = 1
 score = 0
 font = pygame.font.SysFont('Arial', 28)
+menu_font = pygame.font.SysFont('Arial', 48, bold=True)
+btn_font = pygame.font.SysFont('Arial', 32, bold=True)
 game_over = False
 lives = 3
 
@@ -67,6 +72,39 @@ def draw():
         restart_text = font.render('Pressione R para reiniciar', True, WHITE)
         screen.blit(restart_text, (WIDTH//2-150, HEIGHT//2+20))
     pygame.display.flip()
+
+def draw_menu():
+    screen.fill(MENU_BG)
+    title = menu_font.render('Space Invaders', True, BTN_COLOR)
+    screen.blit(title, (WIDTH//2 - title.get_width()//2, HEIGHT//2 - 140))
+    # Botão Iniciar
+    start_rect = pygame.Rect(WIDTH//2-120, HEIGHT//2-30, 240, 60)
+    pygame.draw.rect(screen, BTN_COLOR, start_rect, border_radius=12)
+    start_text = btn_font.render('Iniciar Jogo', True, BTN_TEXT_COLOR)
+    screen.blit(start_text, (start_rect.x + start_rect.width//2 - start_text.get_width()//2, start_rect.y + 10))
+    # Botão Fechar
+    close_rect = pygame.Rect(WIDTH//2-120, HEIGHT//2+60, 240, 60)
+    pygame.draw.rect(screen, (230,57,70), close_rect, border_radius=12)
+    close_text = btn_font.render('Fechar', True, BTN_TEXT_COLOR)
+    screen.blit(close_text, (close_rect.x + close_rect.width//2 - close_text.get_width()//2, close_rect.y + 10))
+    pygame.display.flip()
+    return start_rect, close_rect
+
+# Loop de menu
+menu_active = True
+while menu_active:
+    start_rect, close_rect = draw_menu()
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            if start_rect.collidepoint(event.pos):
+                menu_active = False
+            if close_rect.collidepoint(event.pos):
+                pygame.quit()
+                sys.exit()
+    clock.tick(60)
 
 # Inicializa inimigos
 enemies = spawn_enemies(level)
